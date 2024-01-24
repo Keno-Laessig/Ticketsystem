@@ -19,11 +19,16 @@
 			id="mailInputRegister"
 			type="Email"
 			placeholder="Enter mail-adress" />
-        <Label text="Password" labelFor="passwordInputRegister" />
+        <Label text="Passwort" labelFor="passwordInputRegister" />
 		<Input
 			id="passwordInputRegister"
 			type="Password"
 			placeholder="Enter password" />
+        <Label text="Rolle" labelFor="roleInputRegister" />
+		<Input
+			id="roleInputRegister"
+			type="Password"
+			placeholder="Enter role" />
         </content>
         <Toolbar height="30%">
             <Button
