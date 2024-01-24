@@ -1,0 +1,36 @@
+{
+	"sap.app": {
+		"id": "Ticketsystem",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "Ticketsystem.V",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.f": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"config": {
+			"sample": {
+				"files": [
+					"Component.js",
+					"V.view.xml",
+					"login.fragment.xml",
+					"register.fragment.xml",
+					"C.controller.js",
+					"index.html",
+					"manifest.json"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    
+	<Dialog title="Ticket Ändern" contentWidth="60%" contentHeight="50%">
+        <content>
+            <Label text="Titel" labelFor="ticketTitelInput" />
+		    <Input
+			    id="ticketTitelInput"
+			    type="Text"
+			    placeholder="Titel" />
+            <Label text="Beschreibung" labelFor="ticketTitelInput" />
+		    <Input
+			    id="ticketDescriptionInput"
+			    type="Text"
+			    placeholder="Beschreibung" />
+            <Label text="Status" labelFor="ticketInput" />
+            <Toolbar height="30%">
+            <Button
+                text="offen"
+                width="75px"
+                press=".onaddTicketButtonPress"
+                class="sapUiSmallMarginBottom"
+                type="Reject"/>
+		    <Button
+                text="in Bearbeitung"
+                width="auto"
+                press=".onCancelButtonPress"
+                class="sapUiSmallMarginBottom"/>
+		    <Button
+                text="fertig"
+                width="75px"
+                press=".onCancelButtonPress"
+                class="sapUiSmallMarginBottom"
+                type="Accept"/>
+            </Toolbar>
+        </content>
+        
+        <Toolbar height="30%" >
+            <ToolbarSpacer ></ToolbarSpacer>
+            <Button
+                text="submit"
+                width="100px"
+                press=".onaddTicketButtonPress"
+                class="sapUiSmallMarginBottom" />
+		    <Button
+                text="cancel"
+                width="75px"
+                press=".onCancelButtonPress"
+                class="sapUiSmallMarginBottom"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

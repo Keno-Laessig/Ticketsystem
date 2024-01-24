@@ -1,0 +1,91 @@
+<mvc:View
+    controllerName="Ticketsystem.C"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f"
+>
+<Toolbar height="3rem">
+    <Title text="alle Tickets" />
+    <ToolbarSpacer />
+    <Title text="Ticket Status:" />
+    <Title text="offen" />
+    <core:Icon src="sap-icon://circle-task-2" color="red"/>
+    <Title text="in Bearbeitung"/>
+    <core:Icon src="sap-icon://circle-task-2" color="yellow"/>
+    <Title text="fertig"/>
+    <core:Icon src="sap-icon://circle-task-2" color="green"/>
+    <ToolbarSpacer />
+    <core:Icon src="sap-icon://person-placeholder" />
+    <Title
+        text=""
+        id="user"
+    />
+</Toolbar>
+    
+    <Panel
+        id="panelForGridList"
+        backgroundDesign="Transparent"
+    >
+        <headerToolbar>
+            <Toolbar height="3rem">
+                <Title text="Ticketsystem" />
+                <ToolbarSpacer />
+                <SearchField
+                    liveChange=".onSearch"
+                    width="15rem"
+                    />
+                <ToolbarSpacer /> 
+                <Button
+                text="Ticket Erstellen"
+                width="auto"
+                press=".onAddTicketButtonPress"
+                class="sapUiSmallMarginBottom" />
+            </Toolbar>
+        </headerToolbar>
+
+        <f:GridList
+            id="gridList"
+            mode="SingleSelectMaster"
+            selectionChange="onTicketPress"
+            growing="false"
+            growingThreshold="9"
+            items="{path: '/'}"
+            >
+            <f:customLayout>
+                <grid:GridBoxLayout />
+            </f:customLayout>
+
+            <f:GridListItem
+            highlight="{
+                path: 'completed',
+                formatter: '.formatStatus'
+                }"
+                >
+                <VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <layoutData>
+                            <FlexItemData
+                                growFactor="1"
+                                shrinkFactor="0"
+                            />
+                        </layoutData>
+                        <Title
+                            text="Titel: {title}"
+                            wrapping="true"
+                        />
+                        <Label
+                            text="UserID: {userId} | ID: {id}"
+                            wrapping="true"
+                        />
+                        <Label
+                            text="Completed: {completed}"
+                            wrapping="true"
+                        />
+                    </VBox>
+                </VBox>
+            </f:GridListItem>
+        </f:GridList>
+    </Panel>
+</mvc:View>

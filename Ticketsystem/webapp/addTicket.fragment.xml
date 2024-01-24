@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    
+	<Dialog title="Ticket Erstellen" contentWidth="40%" contentHeight="50%">
+        <content>
+            <Label text="Titel" labelFor="ticketTitelInput" />
+		<Input
+			id="ticketTitelInput"
+			type="Text"
+			placeholder="Titel" />
+        <Label text="Room" labelFor="ticketRoomInput" />
+		<Input
+			id="ticketRoomInput"
+			type="Text"
+			placeholder="Enter room" />
+        <Label text="Beschreibung" labelFor="ticketDescriptionInput" />
+		<Input
+			id="ticketDescriptionInput"
+			type="Text"
+			placeholder="Enter room" />
+        </content>
+        <Toolbar height="30%">
+            <Button
+                text="Submit"
+                width="100px"
+                press=".onaddTicketButtonPress"
+                class="sapUiSmallMarginBottom" />
+		    <Button
+                text="cancel"
+                width="75px"
+                press=".onCancelButtonPress"
+                class="sapUiSmallMarginBottom"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

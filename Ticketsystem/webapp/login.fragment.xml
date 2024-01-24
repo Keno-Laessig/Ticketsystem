@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    
+	<Dialog title="Login" contentWidth="40%" contentHeight="50%">
+        <content>
+            <Label text="Mail-Adresse" labelFor="mailInput" />
+		<Input
+			id="mailInput"
+			type="Email"
+			placeholder="Enter mail-adress" />
+        <Label text="Password" labelFor="passwordInput" />
+		<Input
+			id="passwordInput"
+			type="Password"
+			placeholder="Enter password" />
+        </content>
+        <Toolbar height="30%">
+            <Button
+                text="Register"
+                width="100px"
+                press=".onRegisterButtonPress"
+                class="sapUiSmallMarginBottom" />
+		    <Button
+                text="Login"
+                width="75px"
+                press=".onLoginButtonPress"
+                class="sapUiSmallMarginBottom"/>
+		    <Button
+                text="cancel"
+                width="75px"
+                press=".onCancelButtonPress"
+                class="sapUiSmallMarginBottom"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

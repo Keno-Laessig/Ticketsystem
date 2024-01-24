@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+    
+	<Dialog title="Register" contentWidth="40%" contentHeight="50%">
+        <content>
+        <Label text="Vorname" labelFor="firstNameInput" />
+		<Input
+			id="firstNameInput"
+			type="Text"
+			placeholder="Enter first Name" />
+        <Label text="Nachname" labelFor="lastNameInputRegister" />
+		<Input
+			id="lastNameInputRegister"
+			type="Text"
+			placeholder="Enter last Name" />
+        <Label text="Mail-Adresse" labelFor="mailInputRegister" />
+		<Input
+			id="mailInputRegister"
+			type="Email"
+			placeholder="Enter mail-adress" />
+        <Label text="Password" labelFor="passwordInputRegister" />
+		<Input
+			id="passwordInputRegister"
+			type="Password"
+			placeholder="Enter password" />
+        </content>
+        <Toolbar height="30%">
+            <Button
+                text="submit"
+                width="100px"
+                press=".onRegisterSubmitButtonPress"
+                class="sapUiSmallMarginBottom" />
+		    <Button
+                text="cancel"
+                width="75px"
+                press=".onRegisterCancelButtonPress"
+                class="sapUiSmallMarginBottom"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>
