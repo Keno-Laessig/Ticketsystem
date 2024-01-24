@@ -59,7 +59,7 @@
 
             <f:GridListItem
             highlight="{
-                path: 'completed',
+                path: 'status',
                 formatter: '.formatStatus'
                 }"
                 >
@@ -72,15 +72,19 @@
                             />
                         </layoutData>
                         <Title
-                            text="Titel: {title}"
+                            text="Titel: {titel}"
                             wrapping="true"
                         />
                         <Label
-                            text="UserID: {userId} | ID: {id}"
+                            text="ID: {id}"
                             wrapping="true"
                         />
                         <Label
-                            text="Completed: {completed}"
+                            text="Beschreibung: {beschreibung}"
+                            wrapping="true"
+                        />
+                        <Label
+                            text="Status: {status}"
                             wrapping="true"
                         />
                     </VBox>
