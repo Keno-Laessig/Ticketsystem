@@ -22,7 +22,7 @@ sap.ui.define([
 			this._dialog.open();
 
 			// Daten laden
-			fetch('https://jsonplaceholder.typicode.com/todos/')
+			fetch('http://localhost:8080/tickets')
 				.then(function (response) {
 					return response.json();
 				})
@@ -108,19 +108,14 @@ sap.ui.define([
 			});
 		},
 		onRegisterSubmitButtonPress: function () {
-			var registerFirstName = sap.ui.getCore().byId("firstName").getValue();
-			var registerLastName = sap.ui.getCore().byId("lastName").getValue();
-			var registerMail = sap.ui.getCore().byId("mailInputRegister").getValue();
-			var registerPassword = sap.ui.getCore().byId("passwordInputRegister").getValue();
-			_timeout = jQuery.sap.delayedCall(0, this, function () {
-				this._dialog.close()
-			});
-
-			var registerFirstName = sap.ui.getCore().byId("firstNameInput").getValue();
-			var registerLastName = sap.ui.getCore().byId("lastNameInput").getValue();
+			var registerFirstName = sap.ui.getCore().byId("firstNameInputRegister").getValue();
+			var registerLastName = sap.ui.getCore().byId("lastNameInputRegister").getValue();
 			var registerMail = sap.ui.getCore().byId("mailInputRegister").getValue();
 			var registerPassword = sap.ui.getCore().byId("passwordInputRegister").getValue();
 			var registerRole = sap.ui.getCore().byId("roleInputRegister").getValue();
+			_timeout = jQuery.sap.delayedCall(0, this, function () {
+				this._dialog.close()
+			});
 
 			const dataToSend = {
 				Vorname: registerFirstName,
