@@ -116,8 +116,8 @@ sap.ui.define([
 				this._dialog.close()
 			});
 
-			var registerFirstName = sap.ui.getCore().byId("firstName").getValue();
-			var registerLastName = sap.ui.getCore().byId("lastName").getValue();
+			var registerFirstName = sap.ui.getCore().byId("firstNameInput").getValue();
+			var registerLastName = sap.ui.getCore().byId("lastNameInput").getValue();
 			var registerMail = sap.ui.getCore().byId("mailInputRegister").getValue();
 			var registerPassword = sap.ui.getCore().byId("passwordInputRegister").getValue();
 			var registerRole = sap.ui.getCore().byId("roleInputRegister").getValue();
@@ -125,20 +125,20 @@ sap.ui.define([
 			const dataToSend = {
 				Vorname: registerFirstName,
 				Nachname: registerLastName,
-				EMail: registerMail,
+				EMailAdresse: registerMail,
 				Kennwort: registerPassword,
 				Rolle: registerRole
 			};
 
-			const url = 'http://localhost:8080/setUser';
-
-			fetch(url, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(dataToSend)
-			})
+			const url = 'http://localhost:8080/addUser';
+			let options={
+				method: "POST",
+				headers: new Headers({
+					"Content-Type": "application/json;charset=utf-8"
+			}),
+			body: JSON.stringify(dataToSend)
+		};
+			fetch(url, options)
 				.then(response => {
 					if (!response.ok) {
 						throw new Error('Network response was not ok');
